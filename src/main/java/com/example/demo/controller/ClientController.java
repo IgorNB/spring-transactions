@@ -26,13 +26,6 @@ public class ClientController {
     clientService.makeSomeStrangeThings();
   }
 
-  @Transactional(readOnly = false)
-  @PutMapping("/makeSomeNormalThings")
-  public void makeSomeNormalThings() {
-    Client byId = clientRepositiry.getById(0L);
-    clientService.makeSomeNormalThings(byId);
-  }
-
   @GetMapping("/getClientName")
   public String getClientName() {
     return clientService.getClientName();

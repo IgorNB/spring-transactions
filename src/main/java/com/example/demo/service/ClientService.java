@@ -14,14 +14,9 @@ public class ClientService {
 
   private final ClientRepositiry clientRepositiry;
 
-  @Transactional(readOnly = false)
+  @Transactional(readOnly = true)
   public void makeSomeStrangeThings() {
     Client client = strangeService.readOnlyTrueMethod();
-    strangeService.readOnlyFalseMethod(client);
-  }
-
-  @Transactional(readOnly = false)
-  public void makeSomeNormalThings(Client client) {
     strangeService.readOnlyFalseMethod(client);
   }
 
