@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd"
+  logicalFilePath="db/changelog/release/00001.xml">
+
+  <changeSet id="createclienttable" author="iborisenko">
+    <createTable tableName="CLIENT">
+      <column name="ID" remarks="Identifier" type="NUMBER(19, 0)">
+        <constraints primaryKey="true"/>
+      </column>
+      <column name="NAME" type="VARCHAR(150)"/>
+    </createTable>
+  </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd"
+  logicalFilePath="db/changelog/release/00001.xml">
+
+  <changeSet id="loadupdateclient" author="iborisenko">
+    <loadData tableName="CLIENT" encoding="UTF-8" separator=";" quotchar="&quot;"
+      file="db/changelog/loadupdate/data/CLIENT.csv">
+      <column name="ID" header="ID" type="NUMERIC"/>
+      <column name="NAME" header="NAME" type="STRING"/>
+    </loadData>
+  </changeSet>
+
+</databaseChangeLog>
