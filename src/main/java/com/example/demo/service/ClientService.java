@@ -1,27 +1,24 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Client;
-import com.example.demo.repository.ClientRepositiry;
+import com.example.demo.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ClientService {
 
-  private final StrangeService strangeService;
+  private final ClientRepository clientRepository;
 
-  private final ClientRepositiry clientRepositiry;
-
-  @Transactional(readOnly = true)
-  public void makeSomeStrangeThings() {
-    Client client = strangeService.readOnlyTrueMethod();
-    strangeService.readOnlyFalseMethod(client);
-  }
-
-  @Transactional(readOnly = false)
-  public String getClientName() {
-    return clientRepositiry.getById(0L).getName();
+  @Transactional
+  public String test() {
+    Client save = clientRepository.save(new Client());
+    log.info("id = " + save.getId());
+    log.info("id = " + save.getName());
+    return save.getName();
   }
 }

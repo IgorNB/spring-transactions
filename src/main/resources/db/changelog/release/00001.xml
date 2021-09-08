@@ -12,5 +12,8 @@
       <column name="NAME" type="VARCHAR(150)"/>
     </createTable>
   </changeSet>
+  <changeSet id="HIBERNATE_SEQUENCE SEQUENCE" author="tesler">
+    <createSequence maxValue="9223372036854775807" sequenceName="HIBERNATE_SEQUENCE" startValue="2"/>
+  </changeSet>
 
 </databaseChangeLog>
